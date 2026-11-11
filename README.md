@@ -1,6 +1,7 @@
 # Fullstack Pokédex
 
-A Laravel API aggregation layer and Next.js frontend for browsing Pokémon from [PokeAPI](https://pokeapi.co/docs/v2).
+Pokédex app using the PokeAPI with a Laravel backend API for data aggregation and a Next.js frontend for display.
+[PokeAPI](https://pokeapi.co/docs/v2).
 
 ## Requirements
 
@@ -56,4 +57,4 @@ The search field filters the pages already loaded.
 
 - `backend/` Laravel 12 API and PokeAPI aggregation controller
 - `frontend/` Next.js App Router UI
-- `images/` assessment-supplied artwork used by the frontend
+- `images/` assessment-supplied images used in frontend
