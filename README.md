@@ -103,15 +103,6 @@ GET http://localhost:8000/api/pokemons?page=1&limit=12
 | `height` | Number | Pokémon's height. |
 | `weight` | Number | Pokémon's weight. |
 
-## 6. Pagination Examples
-
-| Request | Description |
-|---|---|
-| `/api/pokemons?page=1&limit=12` | Retrieves the first 12 Pokémon. |
-| `/api/pokemons?page=2&limit=12` | Retrieves the next 12 Pokémon. |
-| `/api/pokemons?page=1&limit=5` | Retrieves the first 5 Pokémon. |
-| `/api/pokemons?page=3&limit=5` | Retrieves Pokémon records 11–15, assuming the records are consistently ordered. |
-
 ## Structure
 
 - `backend/` Laravel 12 API and PokeAPI aggregation controller
