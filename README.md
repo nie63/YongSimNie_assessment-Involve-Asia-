@@ -37,21 +37,80 @@ The frontend calls only the Laravel endpoint.
 The center list has its own scroll container and automatically loads the next API page when the user reaches the bottom; 
 The search field filters the pages already loaded.
 
-## API response
+# API Documentation – Get Pokémon List
 
-`GET /api/pokemons?page=1&limit=12`
+## 1. Endpoint
+
+Retrieves a paginated list of Pokémon records, including their images, types, height and weight.
+
+| Item | Details |
+|---|---|
+| **HTTP Method** | `GET` |
+| **Endpoint** | `/api/pokemons` |
+| **Full URL (Local)** | `http://localhost:8000/api/pokemons` |
+| **Response Format** | JSON |
+| **Success Status Code** | `200 OK` |
+
+## 2. Query Parameters
+
+The API supports pagination through the following query parameters:
+
+| Parameter | Type | Required | Description | Default |
+|---|---|---|---|---|
+| `page` | Integer | No | Specifies the page number to retrieve. | `1` |
+| `limit` | Integer | No | Specifies the maximum number of Pokémon records per page. | `12` |
+
+**Example Request:**
+
+```http
+GET /api/pokemons?page=1&limit=12
+```
+
+This request retrieves the first page of Pokémon records, with up to 12 records per page.
+
+## 3. Example API Request
+
+```http
+GET http://localhost:8000/api/pokemons?page=1&limit=12
+```
+
+## 4. Example API Response
+
+**Status Code:** `200 OK`
 
 ```json
 [
   {
     "name": "bulbasaur",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    "types": ["grass", "poison"],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "height": 7,
     "weight": 69
   }
 ]
 ```
+
+## 5. Response Field Descriptions
+
+| Field | Data Type | Description |
+|---|---|---|
+| `name` | String | Name of the Pokémon. |
+| `image` | String | URL of the Pokémon's image. |
+| `types` | Array of Strings | Pokémon's elemental types. |
+| `height` | Number | Pokémon's height. |
+| `weight` | Number | Pokémon's weight. |
+
+## 6. Pagination Examples
+
+| Request | Description |
+|---|---|
+| `/api/pokemons?page=1&limit=12` | Retrieves the first 12 Pokémon. |
+| `/api/pokemons?page=2&limit=12` | Retrieves the next 12 Pokémon. |
+| `/api/pokemons?page=1&limit=5` | Retrieves the first 5 Pokémon. |
+| `/api/pokemons?page=3&limit=5` | Retrieves Pokémon records 11–15, assuming the records are consistently ordered. |
 
 ## Structure
 
