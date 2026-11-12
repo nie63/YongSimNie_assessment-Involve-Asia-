@@ -14,11 +14,8 @@ type Pokemon = {
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
 // keep the carousel independent from external image 
 const slides = ["/carousel_image.jpg", "/carousel_image2.png", "/carousel_image3.jpeg"];
+// page limit set to 24
 const PAGE_LIMIT = 24;
-
-function formatNumber(value: number) {
-  return String(value).padStart(3, "0");
-}
 
 export default function Home() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -77,7 +74,6 @@ export default function Home() {
           <div className={styles.carouselTrack}>
             {[...slides, ...slides].map((image, index) => <img key={`${image}-${index}`} src={image} alt="" />)}
           </div>
-          <div className={styles.dots}>{slides.map((image, index) => <button key={image} aria-label={`Carousel slide ${index + 1}`} className={index === 0 ? styles.activeDot : ""} />)}</div>
         </div>
         <div className={styles.sideBanners}>
           <div className={styles.sideBanner}><img src="/top_static_banner1.png" alt="Pokémon banner" /></div>
@@ -95,9 +91,8 @@ export default function Home() {
             <button className={styles.searchSubmit} type="submit">Search</button>
           </form>
           <div ref={listRef} className={styles.pokemonList} onScroll={handleListScroll}>
-            {filteredPokemons.map((pokemon, index) => (
-              <article className={styles.card} key={`${pokemon.name}-${index}`}>
-                <div className={styles.cardNumber}>#{formatNumber(index + 1)}</div>
+            {filteredPokemons.map((pokemon) => (
+              <article className={styles.card} key={pokemon.name}>
                 <div className={styles.sprite}><img src={pokemon.image ?? "/top_static_banner2.jpg"} alt={pokemon.name} loading="lazy" /></div>
                 <div className={styles.cardInfo}><h3>{pokemon.name}</h3><div className={styles.types}>{pokemon.types.map((type) => <span key={type} className={styles[type] ?? ""}>{type}</span>)}</div></div>
                 <div className={styles.metrics}><span>HT <b>{pokemon.height / 10}m</b></span><span>WT <b>{pokemon.weight / 10}kg</b></span></div>

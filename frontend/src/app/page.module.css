@@ -1,17 +1,300 @@
-.page { --banner-width: 240px; --top-height: 250px; width: calc(50vw - 24px); max-width: none; margin: auto; padding: 26px 24px 44px; zoom: 2; }
-.header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 22px; }
-.brand { display: flex; align-items: center; gap: 12px; }.brand img { width: 66px; height: 45px; object-fit: contain; }.brand h1, .collectionHeading h2, .heroCopy strong, .card h3 { font-family: "Space Grotesk", sans-serif; }.brand h1 { font-size: 23px; letter-spacing: -.05em; }
-.eyebrow, .kicker { display: block; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }.headerMeta { color: var(--muted); font-size: 12px; font-weight: 600; }.statusDot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #64b879; }
-.hero { position: relative; z-index: 0; display: grid; grid-template-columns: minmax(0, 1fr) var(--banner-width); gap: 11px; height: var(--top-height); margin-bottom: 14px; }.carousel { position: relative; min-width: 0; height: var(--top-height); overflow: hidden; border-radius: 12px; background: #f5b04a; }.carouselTrack { display: flex; width: 600%; height: 100%; animation: carousel-scroll 18s linear infinite; }.carouselTrack img { flex: 0 0 16.6667%; width: 16.6667%; height: 100%; object-fit: cover; object-position: center; }
-@keyframes carousel-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.heroCopy { position: absolute; left: 36px; bottom: 42px; color: white; text-shadow: 0 2px 20px #0005; }.heroCopy .kicker { color: #fff; margin-bottom: 5px; }.heroCopy strong { display: block; font-size: clamp(42px, 5vw, 70px); letter-spacing: -.08em; line-height: .96; }.heroCopy p { max-width: 220px; margin-top: 12px; font-size: 13px; line-height: 1.4; }
-.dots { position: absolute; left: 36px; bottom: 18px; display: flex; gap: 6px; }.dots button { width: 22px; height: 3px; border: 0; border-radius: 5px; background: #fff8; }.dots button.activeDot { background: white; }
-.sideBanners { display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 11px; min-width: 0; height: var(--top-height); }.sideBanner { position: relative; min-height: 0; overflow: hidden; border-radius: 12px; background: #ffe96b; }.sideBanner img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .46; }.darkBanner { background: #7a9db7; }
-.pokedexShell { position: relative; z-index: 1; display: grid; grid-template-columns: var(--banner-width) minmax(0, 1fr) var(--banner-width); gap: 11px; align-items: start; margin-top: 0; }.artPanel { width: 100%; height: 330px; margin-top: 43px; position: sticky; top: 14px; overflow: hidden; border-radius: 9px; background-position: center; background-size: cover; }.leftArt { background-image: linear-gradient(180deg, #f27b4b33, #f27b4bcc), url("/carousel_image.jpg"); background-position: 0 center; }.rightArt { background-image: linear-gradient(180deg, #8cb8cf22, #273c5fcc), url("/carousel_image.jpg"); background-position: 100% center; }.artPanel div { position: absolute; left: 11px; bottom: 13px; color: #fff; }.artPanel span { display: block; font-size: 8px; opacity: .75; margin-bottom: 5px; }.artPanel strong { font-family: "Space Grotesk"; font-size: 13px; line-height: 1; }
-.collection { min-width: 0; }.collectionHeading { display: flex; justify-content: space-between; align-items: end; padding: 0 4px 15px; }.collectionHeading h2 { font-size: 28px; letter-spacing: -.07em; }.count { color: var(--muted); font-size: 11px; }.searchRow { position: sticky; top: 0; z-index: 2; display: flex; gap: 7px; }.search { display: flex; flex: 1; align-items: center; gap: 9px; height: 45px; padding: 0 15px; border: 1px solid #e8e4de; border-radius: 12px; background: #fff; color: #a9afb3; }.search span { font-size: 22px; line-height: 0; transform: rotate(-20deg); }.search input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: 13px; }.search button { border: 0; background: none; color: var(--muted); font-size: 21px; }.searchSubmit { height: 45px; padding: 0 16px; border: 1px solid #e5c34b; border-radius: 12px; color: #5f4b00; background: #ffe66d; font-size: 12px; font-weight: 700; }
-.pokemonList { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; height: 525px; overflow-y: auto; padding: 10px 0 25px; scrollbar-color: #d7d0c8 transparent; scrollbar-width: thin; }.card { display: grid; grid-template-columns: 24px 46px minmax(0, 1fr); align-items: center; gap: 7px; min-height: 74px; padding: 7px 9px 7px 7px; border: 1px solid #ebe7e1; border-radius: 9px; background: #fff; transition: transform .2s, box-shadow .2s; }.card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #1f2c3510; }.cardNumber { align-self: start; padding-top: 5px; color: #b7b9b8; font: 600 8px "Space Grotesk"; }.sprite { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; background: #f7f5f0; }.sprite img { width: 44px; height: 44px; object-fit: contain; }.cardInfo h3 { margin-bottom: 5px; font-size: 12px; text-transform: capitalize; }.types { display: flex; gap: 3px; }.types span { padding: 3px 5px; border-radius: 20px; color: #fff; background: #9cabb4; font-size: 7px; font-weight: 700; text-transform: uppercase; }.types .grass { background: #6faf72; }.types .poison { background: #a875ad; }.types .fire { background: #ed8256; }.types .water { background: #6098c5; }.types .electric { background: #d4ae44; }.types .bug { background: #95a951; }.types .flying { background: #8c9ec7; }.types .normal { background: #9ea09d; }.types .ground { background: #b58b63; }.types .fairy { background: #d88daa; }.types .psychic { background: #dd7090; }.types .rock { background: #a18c6c; }.types .ice { background: #7dbbc4; }.types .fighting { background: #b96d58; }
-.metrics { display: none; }.message { grid-column: 1 / -1; padding: 30px; color: var(--muted); text-align: center; font-size: 13px; }.message button { margin-top: 12px; padding: 8px 16px; border: 0; border-radius: 8px; color: #fff; background: var(--orange); font-size: 12px; }
+/* overall webpage container */
+.page { 
+    --banner-width: 240px; 
+    --top-height: 250px; 
+    width: calc(50vw - 24px); 
+    max-width: none; 
+    margin: auto; 
+    padding: 26px 24px 44px;
+     zoom: 2; 
+}
+/* header section */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding-bottom: 22px; 
+}
+/* top banner section */
+.hero { 
+    position: relative; 
+    z-index: 0; 
+    display: grid; 
+    grid-template-columns: minmax(0, 1fr) var(--banner-width); 
+    gap: 11px; 
+    height: var(--top-height);
+    margin-bottom: 14px; 
+}
+
+.carousel { 
+    position: relative; 
+    min-width: 0; 
+    height: var(--top-height); 
+    overflow: hidden; 
+    border-radius: 12px; 
+    background: #f5b04a; 
+}
+/* flexbox to arrange images */
+.carouselTrack { 
+    display: flex; 
+    width: 600%; 
+    height: 100%; 
+    animation: carousel-scroll 18s linear infinite; 
+}
+/* control the dimension of each carousel img */
+.carouselTrack img { 
+    flex: 0 0 16.6667%; 
+    width: 16.6667%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+}
+/* carousel animation movement frm left to right */
+@keyframes carousel-scroll { 
+    from { transform: translateX(0); } to { transform: translateX(-50%); } 
+}
+/* static banner at the right of the carousel*/
+.sideBanners { 
+    display: grid; 
+    grid-template-rows: repeat(2, minmax(0, 1fr)); 
+    gap: 11px; 
+    min-width: 0; 
+    height: var(--top-height); 
+}
+/* static banner background, round corner & image overflow */
+.sideBanner { 
+    position: relative; 
+    min-height: 0; 
+    overflow: hidden;  /* content tht goes outside its container boundaries will be cut off */
+    border-radius: 12px; 
+    background: #ffe96b; 
+}
+
+.sideBanner img { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;  
+}
+/* create 3 column layout at the middle section*/
+.pokedexShell { 
+    position: relative; 
+    z-index: 1; 
+    display: grid; 
+    grid-template-columns: var(--banner-width) minmax(0, 1fr) var(--banner-width); 
+    gap: 11px; 
+    align-items: start; 
+    margin-top: 0; 
+}
+/* static images, position the images into sticky when scrolling */
+.artPanel { 
+    width: 100%; 
+    height: 330px; 
+    margin-top: 43px; 
+    position: sticky; 
+    top: 14px; 
+    overflow: hidden; 
+    border-radius: 9px; 
+    background-position: center; 
+    background-size: cover; 
+}
+/* apply background img & gradient overlay*/
+.leftArt { 
+    background-image: linear-gradient(180deg, #f27b4b33, #f27b4bcc), url("/carousel_image.jpg"); 
+    background-position: 0 center; 
+}
+.rightArt { 
+    background-image: linear-gradient(180deg, #8cb8cf22, #273c5fcc), url("/carousel_image.jpg"); 
+    background-position: 100% center; 
+}
+.collection { 
+    min-width: 0; 
+}
+/* display the number of results loaded on top of the search bar */
+.collectionHeading { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: end; 
+    padding: 0 4px 15px; 
+}
+.collectionHeading h2 { 
+    font-size: 28px; 
+    letter-spacing: -.07em; 
+}
+/* style the pokemon count*/
+.count { 
+    color: var(--muted); 
+    font-size: 11px; 
+}
+/* sticky search bar tht stays visible when scrolling*/
+.searchRow { 
+    position: sticky; 
+    top: 0; 
+    z-index: 2; 
+    display: flex; 
+    gap: 7px; 
+}
+/* search input container styling */
+.search { 
+    display: flex; 
+    flex: 1; 
+    align-items: center; 
+    gap: 9px; 
+    height: 40px; 
+    padding: 0 15px; 
+    border: 1px solid #e8e4de; 
+    border-radius: 12px; 
+    background: #fff; 
+    color: #a9afb3; 
+}
+.search span { 
+    font-size: 22px; 
+    line-height: 0; 
+    transform: rotate(-20deg); 
+}
+.search input { 
+    width: 100%; 
+    border: 0; 
+    outline: 0; 
+    color: var(--ink); 
+    background: transparent; 
+    font-size: 13px; 
+}
+.search button { 
+    border: 0; 
+    background: none; 
+    color: var(--muted); 
+    font-size: 21px; 
+}
+.searchSubmit { 
+    height: 40px; 
+    padding: 0 16px; 
+    border: 1px solid #e5c34b; 
+    border-radius: 12px; 
+    color: #5f4b00; 
+    background: #ffe66d; 
+    font-size: 12px; 
+    font-weight: 700; 
+}
+.pokemonList { 
+    display: grid; 
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    gap: 7px; 
+    height: 525px; 
+    overflow-y: auto; 
+    padding: 10px 0 25px; 
+    scrollbar-color: #d7d0c8 transparent; 
+    scrollbar-width: thin; 
+}
+/* styling of each pokemon card*/
+.card { 
+    display: grid; 
+    grid-template-columns: 46px minmax(0, 1fr); 
+    align-items: center; 
+    gap: 7px; 
+    min-height: 74px; 
+    padding: 7px 9px 7px 7px; 
+    border: 1px solid #ebe7e1; 
+    border-radius: 9px; 
+    background: #fff; 
+    transition: transform .2s, box-shadow .2s; 
+}
+/* apply card hover effect*/
+.card:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px #1f2c3510; 
+}
+/* small background container behind pokemon image */
+.sprite { 
+    display: grid; 
+    place-items: center;
+    width: 44px; 
+    height: 44px; 
+    border-radius: 8px; 
+    background: #f7f5f0; 
+}
+/* pokemon image dimension */
+.sprite img { 
+    width: 44px; 
+    height: 44px; 
+    object-fit: contain; 
+}
+/* pokemon name */
+.cardInfo h3 { 
+    margin-bottom: 5px; 
+    font-size: 12px; 
+    text-transform: capitalize; 
+}
+/* arrange pokemon type horizontally */
+.types { 
+    display: flex; 
+    gap: 3px; 
+}
+.types span { 
+    padding: 3px 5px; 
+    border-radius: 20px; 
+    color: #fff; 
+    background: #9cabb4; 
+    font-size: 7px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+}
+/* apply different color to different pokemon types */
+.types .grass { 
+    background: #6faf72; 
+}
+.types .poison { 
+    background: #a875ad; 
+}
+.types .fire { 
+    background: #ed8256; 
+}
+.types .water { 
+    background: #6098c5; 
+}
+.types .electric { 
+    background: #d4ae44; 
+}
+.types .bug { 
+    background: #95a951; 
+}
+.types .flying { 
+    background: #8c9ec7; 
+}
+.types .normal { 
+    background: #9ea09d; 
+}
+.types .ground { 
+    background: #b58b63; 
+}
+.types .fairy { 
+    background: #d88daa; 
+}
+.types .psychic { 
+    background: #dd7090; 
+}
+.types .rock { 
+    background: #a18c6c; 
+}
+.types .ice { 
+    background: #7dbbc4; 
+}
+.types .fighting { 
+    background: #b96d58; 
+}
+.metrics { 
+    display: none; 
+}
+/* style message displayed inside the pokemon collection (loading msg) */
+.message { 
+    grid-column: 1 / -1; 
+    padding: 30px; 
+    color: var(--muted); 
+    text-align: center; 
+    font-size: 13px; 
+}
+/* responsive screen */
 @media (max-width: 1000px) { .page { --banner-width: 180px; --top-height: 220px; } }
 @media (max-width: 800px) { .page { width: auto; padding: 18px 16px; zoom: 1; }.hero { height: 210px; grid-template-columns: 1fr; }.carousel { height: 210px; }.sideBanners, .artPanel { display: none; }.pokedexShell { display: block; }.headerMeta { display: none; } }
 @media (max-width: 800px) { .pokemonList { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .heroCopy { left: 22px; bottom: 35px; }.heroCopy strong { font-size: 48px; }.pokemonList { grid-template-columns: 1fr; }.card { grid-template-columns: 28px 62px minmax(0, 1fr); }.sprite, .sprite img { width: 58px; height: 58px; } }
+@media (max-width: 480px) { .heroCopy { left: 22px; bottom: 35px; }.heroCopy strong { font-size: 48px; }.pokemonList { grid-template-columns: 1fr; }.card { grid-template-columns: 62px minmax(0, 1fr); }.sprite, .sprite img { width: 58px; height: 58px; } }
